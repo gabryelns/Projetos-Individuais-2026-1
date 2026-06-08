@@ -1,0 +1,24 @@
+# Pipeline UDA — Conjuntura do Setor Habitacional
+# Dependências do projeto
+
+# ── Extração de PDF ───────────────────────────────
+PyMuPDF==1.24.11           # Parser de PDF (Full-Scan) — substitui pdfminer sem regras rígidas
+
+# ── LLM / IA ─────────────────────────────────────
+openai==1.35.3            # Cliente oficial da API GPT-4 (OpenAI)
+
+# ── Validação de Dados (Contrato Semântico) ───────
+pydantic==2.7.4           # Schema e validação dos dados extraídos pelo LLM
+
+# ── API REST ──────────────────────────────────────
+fastapi==0.111.0          # Framework web para a camada de serviço
+uvicorn[standard]==0.30.1 # Servidor ASGI para o FastAPI
+
+# ── Crawler / Monitoramento ───────────────────────
+requests==2.32.3          # HTTP client para download de PDFs
+beautifulsoup4==4.12.3    # Parser HTML para descoberta de links nos sites de RI
+schedule==1.2.2           # Agendador de tarefas para o polling periódico
+
+# ── Utilitários ───────────────────────────────────
+python-dotenv==1.0.1      # Carregamento de variáveis de ambiente (.env)
+lxml==5.2.2               # Parser XML/HTML usado pelo BeautifulSoup
